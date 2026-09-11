@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chemek:block/combiner_factory_ultimate"
+    },
+    "facing=south": {
+      "model": "chemek:block/combiner_factory_ultimate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chemek:block/combiner_factory_ultimate",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "chemek:block/combiner_factory_ultimate",
+      "y": 90
+    }
+  }
+}

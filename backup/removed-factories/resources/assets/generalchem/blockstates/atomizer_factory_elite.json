@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "generalchem:block/atomizer_factory_elite"
+    },
+    "facing=south": {
+      "model": "generalchem:block/atomizer_factory_elite",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "generalchem:block/atomizer_factory_elite",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "generalchem:block/atomizer_factory_elite",
+      "y": 90
+    }
+  }
+}

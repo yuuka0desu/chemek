@@ -1,0 +1,46 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="chemek"
+version="1.0.0"
+displayName="Chemek"
+logoFile="chemek_logo.png"
+authors="Mars Rescue Team"
+description='''Alchemistry machines as Mekanism-style tiered factories: installers, speed/energy upgrades and Mek UI.'''
+
+[[dependencies.chemek]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.chemek]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.chemek]]
+modId="mekanism"
+mandatory=true
+versionRange="[10.4.16,10.4.17)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.chemek]]
+modId="alchemistry"
+mandatory=true
+versionRange="[2.3.4,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.chemek]]
+modId="chemlib"
+mandatory=true
+versionRange="[2.0.19,)"
+ordering="AFTER"
+side="BOTH"

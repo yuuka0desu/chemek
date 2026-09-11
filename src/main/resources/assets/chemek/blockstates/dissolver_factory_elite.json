@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "chemek:block/dissolver_factory_elite"
+    },
+    "facing=south": {
+      "model": "chemek:block/dissolver_factory_elite",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "chemek:block/dissolver_factory_elite",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "chemek:block/dissolver_factory_elite",
+      "y": 90
+    }
+  }
+}

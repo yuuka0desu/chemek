@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.generalchem.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "generalchem.refmap.json",
+  "mixins": [
+    "TierInstallerChemekMixin",
+    "CombinerBlockUseMixin",
+    "CompactorBlockUseMixin",
+    "DissolverBlockUseMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

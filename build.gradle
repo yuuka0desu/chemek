@@ -1,0 +1,87 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+version = '1.0.0'
+group = 'com.generalchem'
+
+base {
+    archivesName = 'chemek'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'info'
+            mods {
+                chemeklink {
+                    source sourceSets.main
+                }
+            }
+        }
+        client {}
+        server { args '--nogui' }
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
+    mavenCentral()
+}
+
+def instanceMods = file('C:/Users/Administrator/Desktop/PCL/PCL/.minecraft/versions/火星救援：新征程/mods')
+def mekanismJar = new File(instanceMods, 'Mekanism-1.20.1-10.4.16.80.jar')
+def alchemistryJar = instanceMods.listFiles().find { it.name.toLowerCase().contains('alchemistry-1.20.1') && !it.name.endsWith('.bak') }
+def alchemylibJar = new File(instanceMods, 'alchemylib-1.20.1-1.0.30.jar')
+def chemlibJar = new File(instanceMods, 'chemlib-1.20.1-2.0.19.jar')
+def jeiJar = instanceMods.listFiles().find { it.name.toLowerCase().contains('jei-1.20.1-forge-15.20.0.133.jar') }
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.20'
+    compileOnly files(mekanismJar, alchemistryJar, alchemylibJar, chemlibJar, jeiJar)
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+mixin {
+    add sourceSets.main, 'generalchem.refmap.json'
+    config 'generalchem.mixins.json'
+}
+
+jar {
+    manifest {
+        attributes([
+                'Specification-Title'      : 'generalchem',
+                'Specification-Version'    : '1',
+                'Implementation-Title'     : project.name,
+                'Implementation-Version'   : project.jar.archiveVersion,
+                'MixinConfigs'             : 'generalchem.mixins.json'
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

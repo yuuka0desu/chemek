@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "mekanism:block/factory/injecting/injecting_factory_side",
+    "down": "mekanism:block/factory/injecting/injecting_factory_bottom",
+    "up": "mekanism:block/factory/injecting/injecting_factory_top",
+    "north": "mekanism:block/factory/injecting/injecting_factory_front",
+    "south": "mekanism:block/factory/injecting/injecting_factory_back",
+    "east": "mekanism:block/factory/injecting/injecting_factory_side",
+    "west": "mekanism:block/factory/injecting/injecting_factory_side"
+  }
+}

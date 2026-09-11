@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "chemek:combiner_factory_basic",
+    "chemek:combiner_factory_advanced",
+    "chemek:combiner_factory_elite",
+    "chemek:combiner_factory_ultimate",
+    "chemek:dissolver_factory_basic",
+    "chemek:dissolver_factory_advanced",
+    "chemek:dissolver_factory_elite",
+    "chemek:dissolver_factory_ultimate",
+    "chemek:compactor_factory_basic",
+    "chemek:compactor_factory_advanced",
+    "chemek:compactor_factory_elite",
+    "chemek:compactor_factory_ultimate"
+  ]
+}
